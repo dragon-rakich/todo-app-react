@@ -1,0 +1,9 @@
+@use '../../styles/variables';
+
+.footer {
+    padding-block: 2em;
+    .footer__copyright {
+        color: variables.$white;
+        text-align: center;
+    }
+}
