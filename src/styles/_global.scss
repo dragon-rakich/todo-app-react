@@ -1,4 +1,12 @@
+@use 'variables';
+
 .container {
     margin: 0 auto;
     max-width: 600px;
+}
+
+body {
+    background-color: variables.$bg;
+    color: variables.$text;
+    font-family: variables.$primary-ff;
 }
