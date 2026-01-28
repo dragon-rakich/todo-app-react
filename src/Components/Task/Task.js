@@ -12,13 +12,14 @@ function Task({task, onToggle, onDelete}) {
                 label={(task.isDone) ? "Undone":"Done"} 
                 type={(task.isDone) ? "secondary-alt":"secondary"} 
                 size="medium"
-                fun={() => {onToggle(task)}}
+                fun={onToggle}
                 />
+                
                 <Button 
                 label="Remove"
                 type="adjacent"
                 size="medium"
-                fun={() => {onDelete(task)}}
+                fun={onDelete}
                 />
             </div>
         </article>
