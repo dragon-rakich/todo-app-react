@@ -6,28 +6,28 @@
     border-radius: 8px;
 }
 
-.btn-primary {
+.btn--primary {
     background-color: variables.$add;
 }
 
-.btn-secondary {
+.btn--secondary {
     background-color: variables.$done;
 }
 
-.btn-secondary--alt {
+.btn--secondary-alt {
     background-color: variables.$undone;
 }
 
-.btn-adjacent {
+.btn--adjacent {
     background-color: variables.$remove;
 }
 
-.btn-medium {
+.btn--medium {
     font-size: 0.75em;
     padding: 0.66em;
 }
 
-.btn-large {
+.btn--large {
     font-size: 1.25em;
     padding: 0.8em;
 }
