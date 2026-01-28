@@ -1,0 +1,32 @@
+@use '../../styles/variables';
+
+.task {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: variables.$bg;
+    border: 1px solid variables.$outline;
+    border-radius: 8px;
+
+    padding: 0.5em;
+}
+
+.task--checked {
+    background-color: variables.$checked-bg;
+}
+
+.task__title {
+    font-size: 0.75em;
+    padding-left: 1em;
+}
+
+.task__title--checked {
+    color: variables.$checked-text;
+    text-decoration: line-through;
+}
+
+.task__btns {
+    display: flex;
+    gap: 8px;
+}
