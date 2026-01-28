@@ -1,0 +1,33 @@
+@use '../../styles/variables';
+
+.btn {
+    color: variables.$btn-text;
+    border: 1px solid variables.$outline;
+    border-radius: 8px;
+}
+
+.btn-primary {
+    background-color: variables.$add;
+}
+
+.btn-secondary {
+    background-color: variables.$done;
+}
+
+.btn-secondary--alt {
+    background-color: variables.$undone;
+}
+
+.btn-adjacent {
+    background-color: variables.$remove;
+}
+
+.btn-medium {
+    font-size: 0.75em;
+    padding: 0.66em;
+}
+
+.btn-large {
+    font-size: 1.25em;
+    padding: 0.8em;
+}
