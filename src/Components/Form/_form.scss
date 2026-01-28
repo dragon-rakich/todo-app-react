@@ -1,0 +1,23 @@
+@use '../../styles/variables';
+
+.form {
+    display: flex;
+    gap: 10px;
+
+    margin-bottom: 3em;
+
+    .form__input {
+        font-size: 1.25em;
+        line-height: 1.2em;
+
+        padding-block: 0.55em;
+        padding-left: 1em;
+
+        background-color: variables.$bg;
+        color: variables.$text;
+        border: 1px solid variables.$outline;
+        border-radius: 8px;
+
+        flex-grow: 1;
+    }
+}
