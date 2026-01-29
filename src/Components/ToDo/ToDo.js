@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 
 import './_toDo.scss';
 
@@ -23,6 +23,7 @@ function ToDo() {
     }
 
     const addTask = async(taskTitle) => {
+        console.log(taskTitle);
         const addedTask = {title: taskTitle, isDone: false}
         addedTask.id = calculateId();
         
@@ -42,18 +43,24 @@ function ToDo() {
     }
 
     const calculateId = () => {
+        console.log("calculate id")
         let highestId = 0;
         for (let i = 0; i < tasks.length; i++) {
-            if (tasks[i].id > highestId) {highestId = tasks.id}
+            console.log("i: " + i + ", id: " + tasks[i].id);
+            console.log("id is a " + typeof(tasks[i].id));
+            if (Number(tasks[i].id) > highestId) {highestId = Number(tasks[i].id)}
         }
+
+        console.log("highest id: " + highestId);
         return highestId + 1;
     }
 
     const toggleTask = async(task) => {
+        console.log(task);
         const toggledTask = {...task, isDone: !task.isDone}
         try{
-            await fetch(API, {
-                method: "POST",
+            await fetch(API + "/" + task.id, {
+                method: "PUT",
                 body: JSON.stringify(toggledTask),
                 headers: {
                     "Content-Type": "application/json"
@@ -73,7 +80,7 @@ function ToDo() {
             })
 
         } catch(err) {
-            console.log("POST error: " + err);
+            console.log("toggle task error: " + err);
         }
 
     }
@@ -89,6 +96,10 @@ function ToDo() {
         }
 
     }
+
+    useEffect(() => {
+        fetchTasks();
+    }, [])
 
     return (
         <section className="toDo">
