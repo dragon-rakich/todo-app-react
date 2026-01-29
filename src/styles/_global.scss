@@ -4,6 +4,8 @@
 .container {
     margin: 0 auto;
     max-width: 600px;
+    padding-inline: 0.75em;
+    @include mixins.tablet-styles() {max-width: 800px;}
 }
 
 body {
