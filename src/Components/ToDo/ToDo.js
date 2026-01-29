@@ -8,7 +8,8 @@ import Task from "../Task/Task";
 function ToDo() {
     const [tasks, setTasks] = useState(false);
 
-    const API = "";
+    const API = "http://localhost:3000/tasks";
+
 
     const fetchTasks = async() => {
         try {
