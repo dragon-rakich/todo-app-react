@@ -15,6 +15,11 @@ function ToDo() {
         try {
             console.log("beep");
             const resp = await fetch(API, {method: "GET"});
+            if (!resp.ok) {
+                console.log("get tasks error: " + resp.status);
+                return;
+            }
+
             const data = await resp.json();
             setTasks(data);
         } catch(err) {
@@ -28,13 +33,17 @@ function ToDo() {
         addedTask.id = calculateId();
         
         try{
-            await fetch(API, {
+            const resp = await fetch(API, {
                 method: "POST",
                 body: JSON.stringify(addedTask),
                 headers: {
                     "Content-Type": "application/json"
                 }
             })
+            if (!resp.ok) {
+                console.log("post new task error: " + resp.status);
+                return;
+            }
 
             setTasks(prev => [...prev, addedTask])
         } catch(err) {
@@ -52,20 +61,24 @@ function ToDo() {
         }
 
         console.log("highest id: " + highestId);
-        return highestId + 1;
+        return String(highestId + 1);
     }
 
     const toggleTask = async(task) => {
         console.log(task);
         const toggledTask = {...task, isDone: !task.isDone}
         try{
-            await fetch(API + "/" + task.id, {
+            const resp = await fetch(API + "/" + task.id, {
                 method: "PUT",
                 body: JSON.stringify(toggledTask),
                 headers: {
                     "Content-Type": "application/json"
                 }
             })
+            if (!resp.ok) {
+                console.log("toggle task error: " + resp.status);
+                return;
+            }
 
             setTasks(prev => {
                 const newTasks = [];
@@ -88,7 +101,11 @@ function ToDo() {
     const deleteTask = async(task) => {
         const id = task.id;
         try{
-            await fetch(API + "/" + task.id, {method: "DELETE"})
+            const resp = await fetch(API + "/" + task.id, {method: "DELETE"})
+            if (!resp.ok) {
+                console.log("delete task error: " + resp.status);
+                return;
+            }
 
             setTasks(prev => prev.filter((task) => task.id !== id ))
         } catch(err) {
