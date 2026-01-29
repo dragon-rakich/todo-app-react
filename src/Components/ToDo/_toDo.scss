@@ -1,9 +1,16 @@
+@use '../../styles/mixins';
+
 .toDo {
     .toDo__tasks {
         ul {
             display: flex;
             flex-direction: column;
             gap: 8px;
+
+            @include mixins.tablet-styles() {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
         }
     }
 }

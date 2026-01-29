@@ -1,4 +1,5 @@
 @use 'variables';
+@use 'mixins';
 
 .container {
     margin: 0 auto;
@@ -9,4 +10,9 @@ body {
     background-color: variables.$bg;
     color: variables.$text;
     font-family: variables.$primary-ff;
+}
+
+html {
+    font-size: 100%;
+    @include mixins.tablet-styles() {font-size: 112.5%;}
 }
