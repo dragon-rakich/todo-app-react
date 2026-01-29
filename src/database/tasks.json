@@ -1,49 +1,49 @@
 {
   "tasks": [
     {
-      "id": "2",
-      "title": "Wash dishes",
-      "isDone": true
-    },
-    {
-      "id": "3",
-      "title": "Call mom",
-      "isDone": true
-    },
-    {
-      "id": "4",
-      "title": "Clean desk",
+      "id": "1",
+      "title": "Write homework",
       "isDone": false
     },
     {
+      "id": "2",
+      "title": "Clean basement",
+      "isDone": false
+    },
+    {
+      "title": "Write React project",
+      "isDone": true,
+      "id": "3"
+    },
+    {
+      "id": "4",
+      "title": "Buy concert tickets",
+      "isDone": true
+    },
+    {
       "id": "5",
-      "title": "Pay bills",
+      "title": "Go for run",
       "isDone": false
     },
     {
       "id": "6",
-      "title": "Walk dog",
+      "title": "File taxes",
       "isDone": false
     },
     {
       "id": "7",
-      "title": "Read book",
+      "title": "Pick up kids",
       "isDone": false
     },
     {
       "id": "8",
-      "title": "Water plants",
-      "isDone": true
-    },
-    {
-      "id": "9",
-      "title": "Test",
-      "isDone": true
-    },
-    {
-      "id": 10,
-      "title": "Test2",
+      "title": "Attend class",
       "isDone": false
+    },
+    {
+      "title": "Install linux",
+      "isDone": true,
+      "id": "9"
     }
   ]
 }
