@@ -14,6 +14,7 @@ function Form({onAddTask}) {
         e.preventDefault()
         if (onAddTask === "function") {
             onAddTask(taskTitle);
+            setTaskTitle("");
         }
     }
 
