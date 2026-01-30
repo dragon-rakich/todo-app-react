@@ -12,9 +12,7 @@ function Form({onAddTask}) {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log("Submit?")
         if (typeof(onAddTask) === "function") {
-            console.log("onAddTask is a function")
             onAddTask(taskTitle);
             setTaskTitle("");
         }

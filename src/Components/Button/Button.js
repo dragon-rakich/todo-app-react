@@ -7,7 +7,6 @@ function Button({label, type, size, fun, isSubmit}) {
     const handleClick = (e) => {
         console.log("Button click");
         if (typeof(fun) === "function") {
-            console.log("fun is indeed a function");
             fun();
         }
     }

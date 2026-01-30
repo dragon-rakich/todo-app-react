@@ -13,8 +13,7 @@ function ToDo() {
 
     const fetchTasks = async() => {
         try {
-            console.log("beep");
-            const resp = await fetch(API, {method: "GET"});
+            const resp = await fetch(API);
             if (!resp.ok) {
                 console.log("get tasks error: " + resp.status);
                 return;
@@ -52,15 +51,10 @@ function ToDo() {
     }
 
     const calculateId = () => {
-        console.log("calculate id")
         let highestId = 0;
         for (let i = 0; i < tasks.length; i++) {
-            console.log("i: " + i + ", id: " + tasks[i].id);
-            console.log("id is a " + typeof(tasks[i].id));
             if (Number(tasks[i].id) > highestId) {highestId = Number(tasks[i].id)}
         }
-
-        console.log("highest id: " + highestId);
         return String(highestId + 1);
     }
 
@@ -69,8 +63,8 @@ function ToDo() {
         const toggledTask = {...task, isDone: !task.isDone}
         try{
             const resp = await fetch(API + "/" + task.id, {
-                method: "PUT",
-                body: JSON.stringify(toggledTask),
+                method: "PATCH",
+                body: JSON.stringify({isDone: toggledTask.isDone}),
                 headers: {
                     "Content-Type": "application/json"
                 }
