@@ -3,7 +3,7 @@
     {
       "id": "1",
       "title": "Write homework",
-      "isDone": false
+      "isDone": true
     },
     {
       "id": "2",
@@ -23,12 +23,12 @@
     {
       "id": "5",
       "title": "Go for run",
-      "isDone": false
+      "isDone": true
     },
     {
       "id": "6",
       "title": "File taxes",
-      "isDone": false
+      "isDone": true
     },
     {
       "id": "7",
@@ -41,9 +41,9 @@
       "isDone": false
     },
     {
-      "title": "Install linux",
-      "isDone": true,
-      "id": "9"
+      "id": "9",
+      "title": "Write final project",
+      "isDone": false
     }
   ]
 }
